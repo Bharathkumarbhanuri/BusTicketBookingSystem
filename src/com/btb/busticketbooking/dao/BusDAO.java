@@ -26,7 +26,8 @@ public class BusDAO {
 			}
 		}
 		catch(Exception e) {
-			e.printStackTrace();		
+			e.printStackTrace();
+			System.out.println();
 		}
 		return buses;
 	}
