@@ -79,6 +79,7 @@ public class App {
         System.out.println();
         for (Bus bus : buses) {
             System.out.println(bus); // calls Bus.toString()
+            waitForEnter();
         }
 
 
@@ -135,11 +136,19 @@ public class App {
 		if(bookingSuccess) {
 			System.out.println("Booking Success");
 			System.out.println();
+			 waitForEnter();
 		}else {
 			System.out.println("Booking failed");
+			waitForEnter();
 		}
 		
 	}
+	
+	private static void waitForEnter() {
+		System.out.println("\nPress Enter to return to the main menu...");
+        sc.nextLine();
+	}
+	
 	private static void viewBookings() {
 		System.out.print("Enter your email to view bookings: ");
         String email = sc.nextLine();
@@ -153,10 +162,12 @@ public class App {
         		for(Booking booking:bookings) {
         			System.out.println(booking);	// calls toString()
         			System.out.println();
+        			waitForEnter();
         		}
         	}
         }else {
         	System.out.println("No passenger found with the provided email");
+        	waitForEnter();
         }
 	}
 	private static void cancelBooking() {
@@ -186,11 +197,13 @@ public class App {
 			if(cancelSuccess) {
 				System.out.println("Booking cancelled successfully");
 				System.out.println();
+				waitForEnter();
 			}else {
 				System.out.println("No booking found with the given ID and email");
 			}
 		}else {
 			System.out.println("Passenger not found");
+			waitForEnter();
 		}
 	}
 	
